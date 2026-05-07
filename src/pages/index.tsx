@@ -1,41 +1,25 @@
-import Link from "next/link";
-import { socialLinks } from "@/lib/utilities";
+
 
 export default function Index() {
   return(
-    <div className="w-full flex flex-col gap-6 mt-6">
-      <p className="text-left text-sm text-white font-light">
-        I’m an undergraduate Computer Science and Electrical Engineering student at California State University, Los Angeles. 
-        This site showcases my projects and technical work to date.  
-      </p>
+    <div className=" bg-black text-white grid place-items-center font-mono text-[11px] tracking-[0.04em] uppercase">
+      <div className="text-center leading-relaxed">
+          <div>Cesar Almendarez</div>
+          <div className="mt-1 opacity-75">Los Angeles, CA</div>
+          <span aria-hidden="true" className="mt-2 inline-block h-[1em] w-[0.6em] animate-blink bg-neutral-600 align-[-0.15em]"/>
+      </div>
 
-      <ul className="flex flex-row flex-wrap items-center justify-start space-x-2">
-        {socialLinks.map((link, idx) => {
-          return(
-            <li 
-              key={idx}
-              className="flex flex-row items-center justify-start space-x-2"
-            >
-              <Link
-                href={link.url}
-                target="_blank"
-              >
-                <p className="text-left text-sm text-white font-light underline">
-                  {link.name}
-                </p>
-              </Link>
+        <style>{`
+          @keyframes blink {
+            50% {
+              opacity: 0;
+            }
+          }
 
-              {idx < socialLinks.length - 1 ? (
-                  <span className="text-left text-sm text-white font-light">
-                      ·
-                  </span>
-              ) : (
-                  <></>
-              )}              
-            </li>
-          );
-        })}
-      </ul>
+          .animate-blink {
+            animation: blink 1.4s steps(1, end) infinite;
+          }
+        `}</style>
     </div>
   );
 }
