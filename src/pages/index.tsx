@@ -1,5 +1,3 @@
-
-
 export default function Index() {
   return(
     <div className=" bg-black text-white grid place-items-center font-mono text-[11px] tracking-[0.04em] uppercase">
